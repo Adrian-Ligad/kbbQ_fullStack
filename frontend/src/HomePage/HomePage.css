@@ -1,0 +1,155 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F5F5;
+  width:100%;
+  height:100%;
+}
+
+/* Logo SLogan */
+
+.LogoSlogancontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.LogoSloganContent {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 2em;
+  opacity:.7;
+  color:white;
+  background:black;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 100px;
+  align-items: center;
+  width:50%;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.Header2 {
+  font-size:25px;
+  padding-top: 1em;
+}
+
+/* The container and the content - each container is 100% width, each content is 50% width */
+.HomePageContainer {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+}
+
+.HomePageContainerContent {
+  width:50%;
+}
+
+/* Home Page  buttons and alternates*/
+.HomeButton {
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-style: solid;
+  border-color: white;
+  width:25%;
+  padding:50px;
+  border-radius: 50%;
+  font-weight: bold;  
+  color:white;
+  background:black;
+  text-decoration: underline;
+}
+
+.alt {
+  border-color: black;
+  color:black;
+  background:white;
+}
+
+.HomeButton:hover{
+  color:#A38A00;
+  border-color: #A38A00;
+  transition: .3s ease-in;
+}
+
+/* Container stylings - can range from 50% of the content to 25% */
+.ContentContainer {
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20em;
+}
+
+.Parallax {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  width:100%; 
+}
+
+.Container25 {
+  background: black;
+  width:30%;
+}
+
+.Container25-alt {
+  background:white;
+  color:black;
+  width:30%;
+}
+
+.Container50 {
+  background:black;
+  width:60%;
+  display: flex;
+  justify-content: center;
+}
+
+.Container50-alt {
+  background-image: url("../pictures/spottedbackground.jpg");
+  width:60%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Picture Stylings and routes*/
+
+.DannyImage {
+  width:100%;
+  height:48em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kbbq9 {
+  background-image:url('../pictures/kbbq9.jpg');
+  background-position: 200% 100%;
+  background-size: contain;
+  filter: contrast(150%) grayscale(50%);
+  }
+
+.kbbq7 {
+  background-image: url('../pictures/kbbq7.jpg');
+  width:100%;
+  height:100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(150%) grayscale(50%);
+}
+
+.kbbq8 {
+  background-image: url('../pictures/kbbq8.jpg');
+  width:100%;
+  height:100%;
+  background-size: contain;
+  background-position: 210% 100%;
+  filter: contrast(150%) grayscale(50%);
+}
