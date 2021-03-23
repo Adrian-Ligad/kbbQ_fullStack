@@ -1,7 +1,10 @@
 import { useState } from 'react'
-
+import axios from 'axios'
+//firstName, lastName, message, rating
 import { TestiSubmission, TestiSubmissionHeader, TestiSubmissionContent, TestiSubmissionColumn, TestiSubmissionRow, TestiInput, TestiSubmit } from './TestimonyPage.styled'
 import RatingStars from './Rating'
+
+const serverSite = 'http://localhost:3001/reviews'
 
 export default function TestimonySubmission() {
     const [ rating, ratingChanged ] = useState(0);
@@ -9,6 +12,19 @@ export default function TestimonySubmission() {
     const [ lName, changeLName ] = useState("")
     const [ review, changeReview ] = useState("")
     
+    function submitReview() {
+        if( fName.length < 1 || lName.length < 1 || rating === 0 || review.length < 1) alert("Fill out all the inputs to submit!")
+        else {
+            axios.post(serverSite, {
+                fName,
+                lName,
+                rating,
+                message: review
+            })
+            .then(val => {console.log(val.data)})
+            .catch(err => console.log(err)) 
+        }
+    }
 
     return(
         <TestiSubmission>
@@ -39,7 +55,7 @@ export default function TestimonySubmission() {
                     </TestiSubmissionColumn>
                 </form>
             </TestiSubmissionContent>
-            <TestiSubmit>
+            <TestiSubmit onClick = {submitReview}>
                 Submit
             </TestiSubmit>
         </TestiSubmission>

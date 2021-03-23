@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/reviews", async(req, res) => {
-    const name = req.body.firstName + " " + req.body.lastName
+    const name = req.body.fName + " " + req.body.lName
     const { message, rating } = req.body
     const review = await postReview(name, rating, message)
     res.send(review)
