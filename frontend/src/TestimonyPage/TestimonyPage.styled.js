@@ -28,10 +28,19 @@ const TestimonyContent = styled.div`
 `
 
 const TestiGallery = styled.div`
+    display: flex;
+    flex-direction: row;
     width: 90%;
     padding: 20px;
+    border-style: solid;
+    justify-content: space-between; 
+    align-items: center;
 `
-
+const TestiReview = styled.div`
+    padding: 10px;
+    border-style: solid;
+    margin: 2px;
+`
 const TestiSubmission = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 50%;
@@ -107,5 +116,5 @@ const TestiSubmit = styled.button`
 
 export {
     TestiPage, TestimonyHeader, TestimonyContent, TestiSubmission, TestiGallery, TestiSubmissionHeader, TestiSubmissionContent,
-    TestiSubmissionColumn, TestiSubmissionRow, TestiInput, TestiSubmit
+    TestiSubmissionColumn, TestiSubmissionRow, TestiInput, TestiSubmit, TestiReview
        }

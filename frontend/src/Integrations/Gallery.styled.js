@@ -12,11 +12,11 @@ const GalleryContainer = styled.div`
 
 //Arrow stylings
 const arrow = styled.button`
-    border: solid white;
+    border: solid ${props => !props.border ? "white" : props.border};
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 40px;
-    background-color: black;
+    background-color: ${props => !props.backgroundColor ? "black" : props.backgroundColor};
     outline: none;
     cursor: pointer;
     transition: .15s ease-in-out;

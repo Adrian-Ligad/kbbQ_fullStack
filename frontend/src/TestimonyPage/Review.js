@@ -1,7 +1,9 @@
+import { TestiReview } from './TestimonyPage.styled'
+
 export default function Reviews({ review }) {
     console.log(review)
     return (
-        <div>
+        <TestiReview>
             <div>
                 {review.name}
             </div>
@@ -11,6 +13,6 @@ export default function Reviews({ review }) {
             <div>
                 {review.message}
             </div>
-        </div>
+        </TestiReview>
     )
 }

@@ -1,6 +1,6 @@
 import { TestiPage, TestimonyHeader, TestimonyContent} from './TestimonyPage.styled'
 
-import TestimonyGallery from './TestimonyModal'
+import TestimonyGallery from './TestimonyGallery'
 import TestimonySubmission from './TestimonySubmission'
 
 export default function TestimonyPage() {
