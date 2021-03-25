@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { TestiGallery } from './TestimonyPage.styled'
+import { TestiGallery, TestiReviewsContainer } from './TestimonyPage.styled'
 import { LeftArrow, RightArrow } from '../Integrations/Gallery.styled'
 import axios from 'axios'
 import Review from './Review'
@@ -29,9 +29,9 @@ export default  function TestimonyGallery() {
                 <div>
                     <LeftArrow backgroundColor = "white" border = "black" onClick = {() => changeIndex("left")}/>
                 </div>
-                <div>
+                <TestiReviewsContainer>
                     {reviews.slice(index, index + 5).map(review => <Review key = {review.id} review = {review}/>)}
-                </div>
+                </TestiReviewsContainer>
                 <div>
                     <RightArrow backgroundColor = "white" border = "black" onClick = {() => changeIndex("right")}/>
                 </div>
