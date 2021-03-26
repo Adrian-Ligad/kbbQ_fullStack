@@ -14,7 +14,6 @@ export default  function TestimonyGallery() {
     }, [])
 
     function changeIndex(direction) {
-        console.log(direction)
         if( direction === "left") {
             if(index === 0) return
             setIndex( index - 5)

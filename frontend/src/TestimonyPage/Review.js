@@ -1,7 +1,6 @@
 import { TestiReview } from './TestimonyPage.styled'
 
 export default function Reviews({ review }) {
-    console.log(review)
     return (
         <TestiReview>
             <div>

@@ -1,18 +1,15 @@
-import { useState, useReducer } from 'react'
-import React from 'react'
+import { useState } from 'react'
 import axios from 'axios'
-//firstName, lastName, message, rating
 import { TestiSubmission, TestiSubmissionHeader, TestiSubmissionContent, TestiSubmissionColumn, TestiSubmissionRow, TestiInput, TestiSubmit } from './TestimonyPage.styled'
 import RatingStars from './Rating'
 
 const serverSite = 'http://localhost:3001/reviews'
 
-export default function TestimonySubmission() {
+export default function TestimonySubmission({handleClick}) {
     const [ rating, ratingChanged ] = useState(0);
     const [ fName, changeFName ] = useState("")
     const [ lName, changeLName ] = useState("")
     const [ review, changeReview ] = useState("")
-    const forceUpdate = useState()[1].bind(null, {})  // see NOTE above
 
     function submitReview() {
         if( fName.length < 1 || lName.length < 1 || rating === 0 || review.length < 1) alert("Fill out all the inputs to submit!")
@@ -24,8 +21,8 @@ export default function TestimonySubmission() {
                 message: review
             })
             .then(val => {
-                console.log("hello")
-                forceUpdate()
+                console.log(val.data)
+                handleClick()
             })
             .catch(err => console.log(err)) 
         }
@@ -60,7 +57,7 @@ export default function TestimonySubmission() {
                     </TestiSubmissionColumn>
                 </form>
             </TestiSubmissionContent>
-            <TestiSubmit onClick = {submitReview}>
+            <TestiSubmit onClick = {() => submitReview()}>
                 Submit
             </TestiSubmit>
         </TestiSubmission>
