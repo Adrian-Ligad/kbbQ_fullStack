@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { TestiGallery, TestiReviewsContainer } from './TestimonyPage.styled'
+import { TestiGalleryContainer, TestiGallery, TestiReviewsContainer } from './TestimonyPage.styled'
 import { LeftArrow, RightArrow } from '../Integrations/Gallery.styled'
 import axios from 'axios'
 import Review from './Review'
@@ -25,6 +25,8 @@ export default  function TestimonyGallery() {
     }
 
     return(
+        <TestiGalleryContainer>
+        <div>{Math.floor((index / 5)) + 1}</div>
         <TestiGallery>
                 <div>
                     <LeftArrow backgroundColor = "white" border = "black" onClick = {() => changeIndex("left")}/>
@@ -36,5 +38,6 @@ export default  function TestimonyGallery() {
                     <RightArrow backgroundColor = "white" border = "black" onClick = {() => changeIndex("right")}/>
                 </div>
         </TestiGallery>
+        </TestiGalleryContainer>
     )
 }
