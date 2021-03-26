@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
+import React from 'react'
 import axios from 'axios'
 //firstName, lastName, message, rating
 import { TestiSubmission, TestiSubmissionHeader, TestiSubmissionContent, TestiSubmissionColumn, TestiSubmissionRow, TestiInput, TestiSubmit } from './TestimonyPage.styled'
@@ -11,7 +12,8 @@ export default function TestimonySubmission() {
     const [ fName, changeFName ] = useState("")
     const [ lName, changeLName ] = useState("")
     const [ review, changeReview ] = useState("")
-    
+    const forceUpdate = useState()[1].bind(null, {})  // see NOTE above
+
     function submitReview() {
         if( fName.length < 1 || lName.length < 1 || rating === 0 || review.length < 1) alert("Fill out all the inputs to submit!")
         else {
@@ -21,7 +23,10 @@ export default function TestimonySubmission() {
                 rating,
                 message: review
             })
-            .then(val => {console.log(val.data)})
+            .then(val => {
+                console.log("hello")
+                forceUpdate()
+            })
             .catch(err => console.log(err)) 
         }
     }

@@ -24,6 +24,7 @@ export default  function TestimonyGallery() {
             setIndex(index + 5)
         }
     }
+
     return(
         <TestiGallery>
                 <div>
