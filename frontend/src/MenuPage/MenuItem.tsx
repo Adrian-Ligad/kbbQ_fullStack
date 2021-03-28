@@ -1,9 +1,9 @@
 import { MenuItem, ComboHeader } from './MenuPage.styled'
+import { MenuItemType } from '../types.d'
 
-export default function MenuItems ({ menuItemTitle, content, comboHeader = false}) {
-    const isCombo = (comboHeader) => {
+const MenuItems:React.FC<MenuItemType> = ({ menuItemTitle, content, comboHeader}) => {
+    const isCombo = (comboHeader:string | undefined) => {
         if(comboHeader) {
-            console.log(comboHeader)
             return <><ComboHeader>{ comboHeader }</ComboHeader> { content }</>   
         } else {
             return content;
@@ -16,3 +16,5 @@ export default function MenuItems ({ menuItemTitle, content, comboHeader = false
         </MenuItem>
     )
 }
+
+export default MenuItems

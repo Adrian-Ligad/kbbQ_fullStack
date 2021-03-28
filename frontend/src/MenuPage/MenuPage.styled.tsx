@@ -1,6 +1,12 @@
 import styled from 'styled-components'
-
+//pictures
 import kbbq from '../pictures/kbbq.jpg'
+
+type Props = {
+    menuItemTitle?: string;
+    menuPic? :string;
+}
+
 const MenuContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -50,14 +56,14 @@ const MenuBoxAlt = styled(MenuBox)`
     color:white;
 `
 
-const MenuPicture = styled.div`
+const MenuPicture = styled.div<Props>`
     width:35%;
     background-image:url(${({ menuPic}) => `"${menuPic}"`});
     background-size:cover;
     background-repeat:no-repeat;
 `
 
-const MenuPictureParallax = styled.div`
+const MenuPictureParallax = styled.div<Props>`
     background-attachment: fixed;
     background-image:url(${({ menuPic}) => `"${menuPic}"`});
     background-size:cover;
@@ -66,7 +72,7 @@ const MenuPictureParallax = styled.div`
     height: 100%;
 `
 
-const MenuItem = styled.div`
+const MenuItem = styled.div<Props>`
     &::before {
         color: #D1B000;
         content:${({ menuItemTitle }) => menuItemTitle ? `"${menuItemTitle}"` : ""};

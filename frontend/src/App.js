@@ -5,7 +5,7 @@ import ScrollToTop from './Header/ScrollToTop'
 import Header from './Header/Header'
 import AboutPage from './AboutPage/AboutPage'
 import ContactPage from './ContactPage/ContactPage'
-import MenuPage from './MenuPage/MenuPage.js'
+import MenuPage from './MenuPage/MenuPage'
 import TestimonyPage from './TestimonyPage/TestimonyPage'
 import HomePage from './HomePage/HomePage'
 

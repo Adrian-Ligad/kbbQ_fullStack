@@ -1,4 +1,6 @@
-export const menuItems1 = [
+import { MenuItemType } from '../types.d'
+
+export const menuItems1:MenuItemType[] = [
     {   "menuItemTitle": "wine_",
         "content" : "red wine  (in moderation), lowers the risk of heart disease, and opens blood vessels for better circulation."
     },
@@ -25,7 +27,7 @@ export const menuItems1 = [
     },    
 ]
 
-export const menuItems2 = [
+export const menuItems2:MenuItemType[] = [
     {   "comboHeader" : "combo A / 8 flavors pork belly combo",
         "content" :  " 8 flavors pork belly • seafood soybean stew kimchi fried rice • kimchi • bean sprouts • mixed salad • assorted banchan"
     },
@@ -43,7 +45,7 @@ export const menuItems2 = [
     },
 ]
 
-export const menuItems3 = [
+export const menuItems3:MenuItemType[] = [
     {"content" : "a la carte menu: minimum order of 2 pork or beef items"},
     {"content" : "premium pork selection"},
     {"content" : "served with kimchi • bean sprouts • mixed salad • assorted banchan"},
@@ -62,7 +64,7 @@ export const menuItems3 = [
     {"content" : "• prime ribeye ste"},
 ]
 
-export const menuItems4 = [
+export const menuItems4:MenuItemType[] = [
     {"content" : "a la carte menu "},
     {"content" : "• cold buckwheat noodle"},
     {"content" : "• spicy buckwheat noodle"},
@@ -81,7 +83,7 @@ export const menuItems4 = [
     {"content" : "• prime ribeye ste"},
 ]
 
-export const menuItems5 = [
+export const menuItems5:MenuItemType[] = [
     {"content" : "Buscem's korean bbq"},
     {"content" : "ktown smash burger _ available monday through thursday"},
     {"content" : "pork + beef patty • kimchi seoul slaw • melted cheese • "},

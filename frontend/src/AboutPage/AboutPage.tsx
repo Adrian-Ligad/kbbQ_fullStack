@@ -1,8 +1,15 @@
+//types
+//components
 import Description from './DescriptionAbout'
-
+//styles
 import { AboutPageWrapper, AboutPageStory, AboutPageStoryContent,AboutPageArrowDown } from './AboutPage.styled'
 
-export default function AboutPage({ scroll }) {
+type Props = {
+    scroll: number;
+}
+
+const AboutPage:React.FC<Props> = ({ scroll }) => {
+
     return(
         <AboutPageWrapper>
             <AboutPageStory>
@@ -13,3 +20,5 @@ export default function AboutPage({ scroll }) {
         </AboutPageWrapper>
     )
 }
+
+export default AboutPage

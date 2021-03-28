@@ -1,6 +1,9 @@
 import styled from 'styled-components'
-
 import SteveHotty from '../pictures/SteveHotty.jpg'
+
+type Props = {
+    scroll: number
+}
 
 const AboutPageWrapper = styled.div`
     display:flex;
@@ -18,7 +21,7 @@ const AboutPageStory = styled.div`
     width:100%;
 `
 
-const AboutPageStoryContent = styled(AboutPageWrapper)`
+const AboutPageStoryContent = styled(AboutPageWrapper)<Props>`
     color:white;
     border-radius: 100px;
     text-align:center;

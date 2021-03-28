@@ -1,6 +1,6 @@
 import { AboutPageDescription, DescriptionCatcher, DescriptionContent } from './AboutPage.styled'
 
-export default function DescriptionAbout() {
+const DescriptionAbout:React.FC = () => {
     return (
         <AboutPageDescription>
             <DescriptionCatcher>
@@ -27,7 +27,8 @@ export default function DescriptionAbout() {
             menu completes the bar experience with menu items like Why Am I Doing This Nachos.  Enjoy a drink at the bar or relax by the ultra-modern runway 
             fire-pit in our outdoor patio.
             </DescriptionContent>
-            <div id = "Gallery"><br/><br/><br/><br/><br/>To Add: Gallery of the wait staff, location(Inside and Outside</div>
         </AboutPageDescription>
     )
 }
+
+export default DescriptionAbout
