@@ -9,3 +9,5 @@ export type MapStyles = {
     width: string;
     height: string;
 }
+
+export type HandleScroll = () => void;

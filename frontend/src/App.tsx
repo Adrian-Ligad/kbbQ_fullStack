@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
-
+//components
 import ScrollToTop from './Header/ScrollToTop'
 import Header from './Header/Header'
 import AboutPage from './AboutPage/AboutPage'
@@ -11,10 +11,14 @@ import HomePage from './HomePage/HomePage'
 
 import { GlobalStyles } from './global';
 
-export default function App() {
+//types
+import { HandleScroll } from './types.d'
+
+const App:React.FC = () => {
+
 //handles scroll and position location
-  const [scroll, setScroll] = useState(window.scrollY);
-  const handleScroll = () => setScroll(window.scrollY);
+  const [scroll, setScroll] = useState<number>(window.scrollY);
+  const handleScroll:HandleScroll = () => setScroll(window.scrollY);
   useEffect(() => { window.addEventListener("scroll", handleScroll); }, []);
   
   return(
@@ -42,3 +46,5 @@ export default function App() {
     </>  
   )
 }
+
+export default App
