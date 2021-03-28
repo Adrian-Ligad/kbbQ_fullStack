@@ -1,7 +1,6 @@
 import ReactStars from "react-rating-stars-component";
 
-
-export default function RatingStars( {ratingChanged} ) {
+const RatingStars = ({ratingChanged}) => {
     return (
         <ReactStars
         count = {5}
@@ -15,3 +14,5 @@ export default function RatingStars( {ratingChanged} ) {
       />
     )
 }
+
+export default RatingStars
