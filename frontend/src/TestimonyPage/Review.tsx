@@ -1,6 +1,13 @@
 import { TestiReview } from './TestimonyPage.styled'
+//types
+import { ReviewType } from '../types.d'
+import React from 'react'
 
-export default function Reviews({ review }) {
+type Props = {
+    review: ReviewType
+}
+
+const Reviews:React.FC<Props> = ({ review }) => {
     return (
         <TestiReview>
             <div>
@@ -15,3 +22,5 @@ export default function Reviews({ review }) {
         </TestiReview>
     )
 }
+
+export default Reviews

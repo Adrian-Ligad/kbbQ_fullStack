@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type Props = {
+    type: string;
+}
+
 const TestiPage = styled.div`
     display: flex;
     flex-direction: column;
@@ -93,7 +97,7 @@ const TestiSubmissionRow = styled.div`
     flex-direction: row;
     justify-content: center;
 `
-const TestiInput = styled.textarea`
+const TestiInput = styled.textarea<Props>`
     width: 50%;
     height: 1em;
     padding: 10px;

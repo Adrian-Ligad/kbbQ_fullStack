@@ -10,4 +10,12 @@ export type MapStyles = {
     height: string;
 }
 
+export type ReviewType = {
+    name: string;
+    rating: string;
+    message: string;
+    id: number;
+}
+
 export type HandleScroll = () => void;
+

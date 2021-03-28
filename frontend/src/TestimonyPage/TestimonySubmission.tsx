@@ -5,11 +5,11 @@ import RatingStars from './Rating'
 
 const serverSite = 'http://localhost:3001/reviews'
 
-export default function TestimonySubmission({handleClick}) {
-    const [ rating, ratingChanged ] = useState(0);
-    const [ fName, changeFName ] = useState("")
-    const [ lName, changeLName ] = useState("")
-    const [ review, changeReview ] = useState("")
+const TestimonySubmission:React.FC = () => {
+    const [ rating, ratingChanged ] = useState<number>(0);
+    const [ fName, changeFName ] = useState<string>("")
+    const [ lName, changeLName ] = useState<string>("")
+    const [ review, changeReview ] = useState<string>("")
 
     function submitReview() {
         if( fName.length < 1 || lName.length < 1 || rating === 0 || review.length < 1) alert("Fill out all the inputs to submit!")
@@ -22,7 +22,6 @@ export default function TestimonySubmission({handleClick}) {
             })
             .then(val => {
                 console.log(val.data)
-                handleClick()
             })
             .catch(err => console.log(err)) 
         }
@@ -63,3 +62,5 @@ export default function TestimonySubmission({handleClick}) {
         </TestiSubmission>
     )
 }
+
+export default TestimonySubmission

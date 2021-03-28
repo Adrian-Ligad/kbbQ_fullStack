@@ -2,18 +2,21 @@ import { useState, useEffect } from 'react';
 import { TestiGalleryContainer, TestiGallery, TestiReviewsContainer } from './TestimonyPage.styled'
 import { LeftArrow, RightArrow } from '../Integrations/Gallery.styled'
 import axios from 'axios'
+//components
 import Review from './Review'
+//types
+import { ReviewType } from '../types.d'
 
-export default  function TestimonyGallery() {
-    const [ reviews, setReviews ] = useState([])
-    const [ index, setIndex ] = useState(0)
+const TestimonyGallery:React.FC = () => {
+    const [ reviews, setReviews ] = useState<ReviewType[]>([])
+    const [ index, setIndex ] = useState<number>(0)
 
     useEffect(() => {
         axios.get('http://localhost:3001/reviews')
         .then(({ data }) => setReviews(data))
     }, [])
 
-    function changeIndex(direction) {
+    function changeIndex(direction: string) {
         if( direction === "left") {
             if(index === 0) return
             setIndex( index - 5)
@@ -41,3 +44,5 @@ export default  function TestimonyGallery() {
         </TestiGalleryContainer>
     )
 }
+
+export default TestimonyGallery

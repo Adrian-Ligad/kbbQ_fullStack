@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+type Props = {
+    backgroundColor?: string;
+    border?: string;
+}
+
 const GalleryContainer = styled.div`
     background:black;
     display: flex;
@@ -11,7 +16,7 @@ const GalleryContainer = styled.div`
 `
 
 //Arrow stylings
-const arrow = styled.button`
+const arrow = styled.button<Props>`
     border: solid ${props => !props.border ? "white" : props.border};
     border-width: 0 3px 3px 0;
     display: inline-block;
