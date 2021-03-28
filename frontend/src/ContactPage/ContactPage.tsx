@@ -1,14 +1,17 @@
 import Location from '../Integrations/Location'
 
 import './ContactPage.css'
+//types
+import { MapStyles } from '../types.d'
 
-const mapStyles = {
+const mapStyles:MapStyles = {
     position: "relative",
     width: '100%',
     height: '100%',
   };
   
-export default function ContactPage() {
+
+const ContactPage:React.FC = () => {
     return (
         <div className = "ContactPage">
             <div className = "Header">Contact Us</div>
@@ -42,3 +45,5 @@ export default function ContactPage() {
         </div>
     )
 }
+
+export default ContactPage

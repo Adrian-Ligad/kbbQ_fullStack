@@ -1,4 +1,11 @@
 import { Map, GoogleApiWrapper } from 'google-maps-react';
+//types
+import { MapStyles } from '../types.d'
+
+type Props = {
+    style: MapStyles;
+    google: any;
+}
 
 const containerStyle = {
     width: "35%",
@@ -7,12 +14,11 @@ const containerStyle = {
 
 //replace initial center with location
 //to implement: marker
-export  function LocationContainer(props) {
+const LocationContainer:React.FC<Props> = (props) => {
     return(
         <div className = "LocationIntegration">
             <Map
                 google= {props.google}
-                zoom= {8}
                 style = {props.style}
                 containerStyle = {containerStyle}
                 initialCenter={{ lat: 47.444, lng: -122.176}}
