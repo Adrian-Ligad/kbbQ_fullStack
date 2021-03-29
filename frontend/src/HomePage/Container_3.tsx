@@ -4,7 +4,8 @@ import kbbq6 from '../pictures/kbbq6.jpg'
 import spottedBackground from '../pictures/spottedbackground.jpg'
 
 const spotBack = `"url(${spottedBackground})"`
-export default function Container_3() {
+
+const Container3:React.FC = () => {
     return(
         <div className = "ContentContainer">
             <div className = "Container50">
@@ -16,3 +17,5 @@ export default function Container_3() {
         </div>
     )
 }
+
+export default Container3

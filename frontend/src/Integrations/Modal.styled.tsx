@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-const ModalContainer = styled.div`
+type Props = {
+    modalDisplay?: boolean;
+    ref?:any;
+}
+
+const ModalContainer = styled.div<Props>`
     display: ${({ modalDisplay }) => !modalDisplay ? "none" : "block"};
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -14,7 +19,7 @@ const ModalContainer = styled.div`
     overflow-y: hidden;
     padding-right: 15px; /* Avoid width reflow */
 `
-const ModalContent = styled.div`
+const ModalContent = styled.div<Props>`
     display:flex;
     flex-direction: row;
     justify-content:space-around;

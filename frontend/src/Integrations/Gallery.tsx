@@ -1,8 +1,14 @@
-import { useState } from 'react'
-
 import { LeftArrow, RightArrow, GalleryContainer, PolaroidContainer, PolaroidImage, Caption } from './Gallery.styled'
 
-export default function Gallery({ pictures, captions, changeModalOpen, changeDisplay, display }) {
+type Props = {
+    pictures: string[];
+    captions: string[];
+    changeModalOpen: (boolean: boolean) => void;
+    changeDisplay: (number: number) => void;
+    display: number;
+}
+
+const Gallery:React.FC<Props> = ({ pictures, captions, changeModalOpen, changeDisplay, display }) => {
  
     return (
         <GalleryContainer>
@@ -20,3 +26,5 @@ export default function Gallery({ pictures, captions, changeModalOpen, changeDis
         </GalleryContainer>
     )
 }
+
+export default Gallery

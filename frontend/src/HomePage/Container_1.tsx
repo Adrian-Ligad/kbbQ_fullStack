@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function Container1() {
+const Container1: React.FC = () => {
     return (
         <div className = "ContentContainer">
             <div className = "Parallax kbbq9"/>
@@ -13,3 +13,5 @@ export default function Container1() {
         </div>
     )
 }
+
+export default Container1

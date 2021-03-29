@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import kbbq2 from '../pictures/kbbq2.jpg'
 
-export default function Container_5() {
+const Container6:React.FC = () => {
     return(
         <div className = "ContentContainer">
             <div className = "Parallax Container50">
@@ -14,3 +14,5 @@ export default function Container_5() {
         </div>
     )
 }
+
+export default Container6

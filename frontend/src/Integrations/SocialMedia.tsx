@@ -1,7 +1,9 @@
-export default function SocialMedia() {
+const SocialMedia:React.FC = () => {
     return (
         <div className = "Social_Media">
             Social Media
         </div>
     )
 }
+
+export default SocialMedia

@@ -1,7 +1,8 @@
+import React from 'react'
 import Danny from '../pictures/DannyBuscemi.jpg'
 
-export default function LogoSlogan() {
-    return(
+const LogoSlogan:React.FC = () => {
+    return (
             <div className = "LogoSlogancontainer">
                     <img className = "DannyImage" src = {Danny} alt = "DannyBuscemi"></img>
                     <div className = "LogoSloganContent">
@@ -12,3 +13,5 @@ export default function LogoSlogan() {
             </div>
     )
 }
+
+export default LogoSlogan

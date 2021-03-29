@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+//components
 import Modal from '../Integrations/Modal'
 import LogoSlogan from './LogoSlogan'
 import Container1 from './Container_1'
@@ -8,21 +8,20 @@ import Container3 from './Container_3'
 import Container4 from './Container_4'
 import Container5 from './Container_5'
 import Container6 from './Container_6'
-
+//pictures
 import { HomePagePics, HomePageCaptions }  from '../pictures/HomePagePics'
 import './HomePage.css'
 
-export default function HomePage() {
-
-//pictures imported
-const pictures = HomePagePics;
-
-//display modal
-const [modalDisplay, changeModalOpen] = useState(false)
+const HomePage:React.FC = () => {
+    
+    const pictures:string[] = HomePagePics;
+    //display modal
+    const [modalDisplay, changeModalOpen] = useState<boolean>(false)
 
 //changing currently displayed polaroid on page and in modal
-const [display,toDisplay] = useState(0)
-const changeDisplay = (number) => {
+const [display,toDisplay] = useState<number>(0)
+
+const changeDisplay = (number: number) => {
     if(number > 0) {
         if(display === pictures.length - 1) toDisplay(0)
         else toDisplay(display + 1)
@@ -34,7 +33,7 @@ const changeDisplay = (number) => {
 }
     return (
         <div className = "HomePage">
-            <Modal pictures = {HomePagePics} captions = {HomePageCaptions} modalDisplay = {modalDisplay} changeModalOpen = {changeModalOpen}
+            <Modal pictures = {HomePagePics} modalDisplay = {modalDisplay} changeModalOpen = {changeModalOpen}
             changeDisplay = {changeDisplay} display = {display}
             />
             <LogoSlogan/>
@@ -67,3 +66,5 @@ const changeDisplay = (number) => {
         </div>
     )
 }
+
+export default HomePage

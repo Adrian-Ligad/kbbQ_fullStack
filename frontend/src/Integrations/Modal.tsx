@@ -1,11 +1,19 @@
 import { useRef } from 'react'
-
+//utilities
 import {useOnClickOutside as closeModal} from '../Header/Hamburger/hooks'
+//styles
 import {LeftArrow, RightArrow } from './Gallery.styled'
-
 import { ModalContainer, ModalContent, CloseButton } from './Modal.styled'
+//types
+type Props = {
+    modalDisplay: boolean;
+    display: number;
+    changeDisplay: any;
+    changeModalOpen: (boolean:boolean) => void
+    pictures: string[];
+}
 
-export default function Modal({ modalDisplay, display,changeDisplay, changeModalOpen, pictures, captions }) {
+const Modal:React.FC<Props> = ({ modalDisplay, display,changeDisplay, changeModalOpen, pictures }) => {
 
 //for closing modal when open
     const modalRef = useRef()
@@ -25,3 +33,5 @@ export default function Modal({ modalDisplay, display,changeDisplay, changeModal
         </ModalContainer>
     )   
 }
+
+export default Modal
