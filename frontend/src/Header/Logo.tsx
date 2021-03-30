@@ -1,7 +1,11 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { LogoPic } from './Header.styled'
-
-export default function Logo({ closeMenu }) {
+//types
+type Props = {
+    closeMenu:() => void;
+}
+const Logo:React.FC<Props> = ({ closeMenu }) => {
     return (
         <Link to = "/"  onClick = {() => closeMenu()}> 
             <LogoPic>   
@@ -9,3 +13,5 @@ export default function Logo({ closeMenu }) {
         </Link>
     )
 }
+
+export default Logo

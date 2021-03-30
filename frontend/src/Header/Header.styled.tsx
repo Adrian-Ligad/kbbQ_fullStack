@@ -4,7 +4,7 @@ import dannyLogo from '../pictures/DannyBuscemi.jpg'
 //types
 type Props = {
     ref?:any;
-    scroll?:number;
+    scroll:number;
 }
 const scrollChangeSize = 70;
 
