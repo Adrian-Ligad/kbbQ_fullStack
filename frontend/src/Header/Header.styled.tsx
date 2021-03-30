@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components'
 
 import dannyLogo from '../pictures/DannyBuscemi.jpg'
+//types
+type Props = {
+    ref?:any;
+    scroll?:number;
+}
 const scrollChangeSize = 70;
 
 //different stylings
-const Header = styled.div`
+const Header = styled.div<Props>`
     font-size: 14px;
     border-bottom: solid;
     border-color: ${({ scroll  }) => scroll < scrollChangeSize ?  "black" : "#2F4F4F"};
@@ -45,7 +50,7 @@ const LeftSide = css`
 const RightSide = css`
     width: 50%;
 `
-const StaticText = css`
+const StaticText = css<Props>`
     color: ${( { scroll } ) => scroll < scrollChangeSize ? "white" : "white"};
 `
 
@@ -54,9 +59,9 @@ const LeftSide_Header = styled.div`${SideHeaders} ${LeftSide}`
 
 const RightSide_Header = styled.div`${SideHeaders} ${RightSide}`
 
-const Business_Hours = styled.div`${StaticText}`
+const Business_Hours = styled.div<Props>`${StaticText}`
 
-const Location = styled.a`
+const Location = styled.a<Props>`
     ${StaticText}
     text-decoration: none;
     &:hover {
@@ -66,6 +71,6 @@ const Location = styled.a`
 
 const HamburgerHolder = styled.div`${SideHeaders} flex-direction: column;`
 
-const Contact_Us = styled.div`${StaticText}`
+const Contact_Us = styled.div<Props>`${StaticText}`
 
 export { Header, LeftSide_Header, RightSide_Header, Business_Hours, Contact_Us, Location, HamburgerHolder, LogoPic }

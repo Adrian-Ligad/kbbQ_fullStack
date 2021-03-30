@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+//types
+type Props = {
+  scroll:number;
+  open: boolean;
+}
 
 const scrollChangeSize = 70;
 
-const StyledMenu = styled.nav`
+const StyledMenu = styled.nav<Props>`
   opacity:1;
   z-index:50;
   background-color:white;

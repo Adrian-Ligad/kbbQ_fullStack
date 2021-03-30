@@ -17,7 +17,7 @@ import { HandleScroll } from './types.d'
 const App:React.FC = () => {
 
 //handles scroll and position location
-  const [scroll, setScroll] = useState<number>(window.scrollY);
+  const [scroll, setScroll] = useState<number>(0);
   const handleScroll:HandleScroll = () => setScroll(window.scrollY);
   useEffect(() => { window.addEventListener("scroll", handleScroll); }, []);
   

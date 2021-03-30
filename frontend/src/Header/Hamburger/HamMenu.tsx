@@ -1,8 +1,15 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { StyledMenu }  from './StyledMenu.styled'
+//types
+type Props = {
+    isOpen:boolean;
+    closeMenu:() => void;
+    scroll: number;
 
-export default function HamMenu({ isOpen, closeMenu, scroll }) {
+}
+const HamMenu:React.FC<Props> = ({ isOpen, closeMenu, scroll }) => {
     return(
             <StyledMenu open = {isOpen} scroll = {scroll}>
                 <Link to = "/" onClick = {() => closeMenu()}>Home</Link>
@@ -13,3 +20,5 @@ export default function HamMenu({ isOpen, closeMenu, scroll }) {
             </StyledMenu>
     )
 }
+
+export default HamMenu

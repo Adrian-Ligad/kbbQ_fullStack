@@ -6,12 +6,18 @@ import Ham from './Hamburger/Hamburger'
 import HamMenu from './Hamburger/HamMenu'
 
 import { useOnClickOutside as closeHeader} from './Hamburger/hooks';
-
+//styles
 import { Business_Hours, Contact_Us, Location, Header, LeftSide_Header, RightSide_Header } from './Header.styled'
-
+//types
+type Props = {
+    scroll:number;
+}
 
 const location = "https://www.google.com/maps/place/4155+University+Pkwy,+San+Bernardino,+CA+92407/@34.1660689,-117.3342482,17z/data=!3m1!4b1!4m5!3m4!1s0x80c352273252f45b:0x3de888116e7c46bf!8m2!3d34.1660689!4d-117.3320595"
-export default function HeaderArea({ scroll }) {
+
+
+
+const HeaderArea:React.FC<Props> = ({ scroll }) =>{
     
 //handles open close of hamburger
   const node = useRef();
@@ -22,7 +28,7 @@ export default function HeaderArea({ scroll }) {
     return(
         <Header scroll = {scroll} ref = {node}>
             <LeftSide_Header>
-                <Ham scroll = {scroll} setOpen = {setOpen} isOpen = {isOpen}/>
+                <Ham  setOpen = {setOpen} isOpen = {isOpen}/>
                 <HamMenu scroll = {scroll} isOpen = {isOpen} closeMenu = {closeMenu}/>
                 <Logo closeMenu = {closeMenu}/>
             </LeftSide_Header>
@@ -43,3 +49,5 @@ export default function HeaderArea({ scroll }) {
         </Header>
     )
 }
+
+export default HeaderArea
